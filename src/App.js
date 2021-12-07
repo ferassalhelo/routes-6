@@ -1,23 +1,51 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import { useState } from "react";
+import { Link, Outlet } from "react-router-dom";
 function App() {
+  let [value, handleValue] = useState("talant");
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <button
+        className={"btn"}
+        onClick={() => {
+          handleValue("admin");
+        }}
+      >
+        login admin
+      </button>
+      <button
+        className={"btn"}
+        onClick={() => {
+          handleValue("talant");
+        }}
+      >
+        login admin
+      </button>
+      <button
+        className={"btn"}
+        onClick={() => {
+          handleValue("inployer");
+        }}
+      >
+        login admin
+      </button>
+      <nav className={"nav"}>
+        <Link className={"link"} to="talant">
+          talant
+        </Link>
+        <Link className={"link"} to="admin2">
+          admin2
+        </Link>
+        <Link className={"link"} to="imployer1">
+          imployer1
+        </Link>
+        <Link className={"link"} to="imployer2">
+          imployer2
+        </Link>
+        <Link className={"link"} to="adminEmployer">
+          admin and employer
+        </Link>
+      </nav>
     </div>
   );
 }
